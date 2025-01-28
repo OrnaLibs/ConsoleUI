@@ -2,6 +2,29 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>OrnaLibs.ConsoleUI</AssemblyName>
+    <RootNamespace>OrnaLibs.ConsoleUI</RootNamespace>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageId>OrnaLibs.ConsoleUI</PackageId>
+    <Version>0.0.0</Version>
+    <Title>OrnaLibs.ConsoleUI</Title>
+    <Authors>OrnarasUS</Authors>
+    <Company>OrnaLibs</Company>
+    <Product>OrnaLibs.ConsoleUI</Product>
+    <RepositoryUrl>https://github.com/OrnaLibs/ConsoleUI</RepositoryUrl>
+    <AssemblyVersion>0.0.0</AssemblyVersion>
+    <FileVersion>0.0.0</FileVersion>
+    <IncludeSymbols>True</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
   </PropertyGroup>
 
 </Project>
