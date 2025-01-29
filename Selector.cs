@@ -22,9 +22,9 @@ namespace OrnaLibs.ConsoleUI
         private void RenderCursor(int newPos)
         {
             if (_value == newPos || newPos < 0 || newPos >= _items.Count) return;
-            Console.SetCursorPosition(2, _value + 1);
+            Console.SetCursorPosition(Position.x + 2, Position.y + _value + 1);
             Console.Write(_items[_value].ToString());
-            Console.SetCursorPosition(2, newPos + 1);
+            Console.SetCursorPosition(Position.x + 2, Position.y + newPos + 1);
             (Console.BackgroundColor, Console.ForegroundColor) = (Console.ForegroundColor, Console.BackgroundColor);
             Console.Write(_items[newPos].ToString());
             _value = newPos;
@@ -34,14 +34,13 @@ namespace OrnaLibs.ConsoleUI
         protected internal override void Render()
         {
             Console.Clear();
-            Console.WriteLine($"{_title}: ");
+            Write($"{_title}: ", Position.x, Position.y);
             for (var i = 0; i < _items.Count; i++)
             {
-                Console.Write("  ");
-                if (i == 0)
-                    (Console.BackgroundColor, Console.ForegroundColor) = (Console.ForegroundColor, Console.BackgroundColor);
-                Console.WriteLine(_items[i].ToString());
-                if (i == 0) Console.ResetColor();
+                Write(
+                    _items[i].ToString(), Position.x + 2, Position.y + i + 1,
+                    i == 0 ? Console.BackgroundColor : Console.ForegroundColor,
+                    i == 0 ? Console.ForegroundColor : Console.BackgroundColor);
             }
         }
 
