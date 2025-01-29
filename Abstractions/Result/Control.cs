@@ -3,14 +3,23 @@
 namespace OrnaLibs.ConsoleUI.Abstractions.Result
 {
     /// <summary>
-    /// 
+    /// Абстракция элемента пользовательского интерфейса с выводом при нажатии Enter
     /// </summary>
-    /// <typeparam name="TResult"></typeparam>
+    /// <typeparam name="TResult">Тип вывода</typeparam>
     public abstract class Control<TResult> : Control
     {
+        /// <summary>
+        /// Действие при нажатии Enter
+        /// </summary>
         protected internal Action<TResult> OnSubmit;
+        /// <summary>
+        /// Итоговое/текущее значение
+        /// </summary>
         protected internal TResult _value;
 
+        /// <summary>
+        /// Показать элемент
+        /// </summary>
         public override void Show()
         {
             Render();

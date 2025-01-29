@@ -4,6 +4,9 @@ using System.Globalization;
 
 namespace OrnaLibs.ConsoleUI
 {
+    /// <summary>
+    /// Элемент ввода даты
+    /// </summary>
     public class DateBox : Control<DateTime>
     {
         private readonly char[] _date;

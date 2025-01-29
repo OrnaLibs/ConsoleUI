@@ -3,6 +3,9 @@ using System;
 
 namespace OrnaLibs.ConsoleUI
 {
+    /// <summary>
+    /// Элемент вывода строки
+    /// </summary>
     public sealed class Label : Control
     {
         private string _text;

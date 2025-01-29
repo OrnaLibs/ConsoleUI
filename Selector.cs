@@ -5,10 +5,9 @@ using System.Collections.Generic;
 namespace OrnaLibs.ConsoleUI
 {
     /// <summary>
-    /// 
+    /// Элемент выбора элемента
     /// </summary>
-    /// <typeparam name="T"></typeparam>
-    public sealed class Selector<T> : Control<int>// IDisposable
+    public sealed class Selector<T> : Control<int>
     {
         private readonly string _title;
         private readonly List<T> _items;
