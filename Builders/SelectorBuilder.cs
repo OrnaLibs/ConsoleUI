@@ -24,9 +24,12 @@ namespace OrnaLibs.ConsoleUI.Builders
 
         public override Selector<T> Build()
         {
-            var obj = new Selector<T>(_title, _items);
-            obj.OnSubmit += onSubmit;
-            obj.OnCancel += onCancel;
+            var obj = new Selector<T>(_title, _items)
+            {
+                OnSubmit = onSubmit,
+                OnCancel = onCancel,
+                Position = position
+            };
             return obj;
         }
     }

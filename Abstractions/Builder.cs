@@ -12,6 +12,7 @@ namespace OrnaLibs.ConsoleUI.Abstractions
         where TBase : Control
     {
         protected internal Action onCancel = () => { };
+        protected internal (int, int) position = (0, 0);
 
         protected internal abstract TChild GetSelf();
         public abstract TBase Build();
@@ -19,6 +20,11 @@ namespace OrnaLibs.ConsoleUI.Abstractions
         public TChild OnCancel(Action action)
         {
             onCancel += action;
+            return GetSelf();
+        }
+        public TChild Position(int x, int y)
+        {
+            position = (x, y);
             return GetSelf();
         }
     }

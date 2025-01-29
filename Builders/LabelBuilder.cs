@@ -45,7 +45,8 @@ namespace OrnaLibs.ConsoleUI.Builders
         public override Label Build() =>
             new Label(_text.ToString(), _bg, _fg)
             {
-                OnCancel = onCancel
+                OnCancel = onCancel,
+                Position = position
             };
     }
 }

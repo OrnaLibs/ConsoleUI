@@ -8,6 +8,7 @@ namespace OrnaLibs.ConsoleUI.Abstractions
     public abstract class Control : IDisposable
     {
         protected internal Action OnCancel;
+        protected internal (int x, int y) Position;
 
         /// <summary>
         /// 
