@@ -3,6 +3,9 @@ using System;
 
 namespace OrnaLibs.ConsoleUI
 {
+    /// <summary>
+    /// Элемент вывода строки
+    /// </summary>
     public sealed class Label : Control
     {
         private string _text;
@@ -11,7 +14,7 @@ namespace OrnaLibs.ConsoleUI
 
         internal Label(string text, ConsoleColor bgColor, ConsoleColor fgColor)
         {
-            _text = text;
+            _text = text.Replace("}","").Replace("{", "").Replace(@"\{","{").Replace(@"\}", "}");
             _background = bgColor;
             _foreground = fgColor;
         }
@@ -21,10 +24,9 @@ namespace OrnaLibs.ConsoleUI
         protected internal override void Render()
         {
             Console.Clear();
-            Console.ForegroundColor = _foreground;
-            Console.BackgroundColor = _background;
-            Console.WriteLine(_text);
-            Console.ResetColor();
+            var lines = _text.Split('\n');
+            for (var i = 0; i < lines.Length; i++)
+                Write(lines[i], Position.x, Position.y + i, _foreground, _background);
         }
     }
 }
