@@ -21,10 +21,9 @@ namespace OrnaLibs.ConsoleUI
         protected internal override void Render()
         {
             Console.Clear();
-            Console.ForegroundColor = _foreground;
-            Console.BackgroundColor = _background;
-            Console.WriteLine(_text);
-            Console.ResetColor();
+            var lines = _text.Split('\n');
+            for (var i = 0; i < lines.Length; i++)
+                Write(lines[i], Position.x, Position.y + i, _foreground, _background);
         }
     }
 }
