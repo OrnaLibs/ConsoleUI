@@ -32,5 +32,13 @@ namespace OrnaLibs.ConsoleUI.Abstractions
         protected internal abstract void OnPressed(ConsoleKeyInfo key);
 
         public void Dispose() => GC.SuppressFinalize(this);
+        protected internal void Write(string text, int x, int y, ConsoleColor? fgColor = null, ConsoleColor? bgColor = null)
+        {
+            Console.SetCursorPosition(x, y);
+            if(!(fgColor is null)) Console.ForegroundColor = fgColor.Value;
+            if(!(bgColor is null)) Console.BackgroundColor = bgColor.Value;
+            Console.Write(text);
+            Console.ResetColor();
+        }
     }
 }
