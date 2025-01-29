@@ -32,7 +32,7 @@ namespace OrnaLibs.ConsoleUI.Builders
 
         public LabelBuilder Format(string key, object value)
         {
-            _text.Replace(key, value.ToString());
+            _text.Replace($"{{{key}}}", value.ToString());
             return GetSelf();
         }
 

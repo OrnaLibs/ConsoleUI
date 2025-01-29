@@ -11,7 +11,7 @@ namespace OrnaLibs.ConsoleUI
 
         internal Label(string text, ConsoleColor bgColor, ConsoleColor fgColor)
         {
-            _text = text;
+            _text = text.Replace("}","").Replace("{", "").Replace(@"\{","{").Replace(@"\}", "}");
             _background = bgColor;
             _foreground = fgColor;
         }
